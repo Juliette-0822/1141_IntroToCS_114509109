@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Hompage</title>
+</head>
+<form method = "post" action="https://www.deitel.com">
+	<body>
+		<table border="1">
+        	<tr>
+            	<th colspan = "3">
+            	About -- 114509109
+				</th>          		
+           	</tr>
+        	<tr>
+            	<td rowspan = "3">
+            		<img src = "crocodile.jpg" width = "80" height = "80" alt = "personal photo">
+            		<br>personal photo
+            	</td>
+            	<td colspan = "2">
+            		<label for = "name">Name:</label>
+            		<input name = "name" type = "text" maxlength = "30"><br>
+            		<label for = "gender">Gender:</label>
+            			<input type = "radio" name = "gender" value = "male" checked> Male
+            			<input type = "radio" name = "gender" value = "female" checked> Female
+            			<input type = "radio" name = "gender" value = "other" checked> Other
+            	</td>
+        	</tr>
+        	<tr>
+    			<td>
+    				<label for = "County">County:</label>
+    				<select name = "County">
+    						<option value = "Taipei">Taipei</option>
+    						<option value = "Taipei">Tainan”</option>
+    						<option value = "Taichung">Taichung</option>
+    						<option value = "Taichung">Taichung</option>
+    				</select>
+    			</td>
+    			<td>
+    				<label for = "Birthday">Birthday:</label>
+    				<input type = "date" id = "Birthday" name = "Birthday"
+    					value = "2000-01-01"
+    					min = "2000-01-01" max = "2021-12-31">
+    			</td>
+    		</tr>
+    		<tr>
+    			<td colspan = 2>
+    				<label for = "email">E-mail:</label>
+    				<input type = "email" name = "email" placeholder = "name@domain.com" required>
+    			</td>
+        	</tr>
+        	<tr>
+        		<th>Hobby</th>
+        		<td colspan = "2">
+        			<input type="checkbox" name="Hobby" value="Swimming">
+        			<label for="Swimming">Swimming</label>
+  					<input type="checkbox" name="Hobby" value="Volleyball">
+        			<label for="Volleyball">Volleyball</label>
+        			<input type="checkbox" name="Hobby" value="Movie">
+        			<label for="Movie">Movie</label>
+        			<input type="checkbox" name="Hobby" value="Game">
+        			<label for="Game">Game</label>
+        			<input type="checkbox" name="Hobby" value="sleep">
+        			<label for="sleep">sleep</label>
+        		</td>
+        	</tr>
+        	<tr>
+        		<th>Skill</th>
+        		<td colspan = "2">
+        			<input type="checkbox" name="Skill" value="Java">
+        			<label for="Java">Java</label>
+  					<input type="checkbox" name="Skill" value="HTML">
+        			<label for="HTML">HTML</label>
+        			<input type="checkbox" name="Skill" value="Python">
+        			<label for="Python">Python</label>
+        			<input type="checkbox" name="Skill" value="Microsoft Office">
+        			<label for="Microsoft Office">Microsoft Office</label>
+        			<input type="checkbox" name="Skill" value="Premiere">
+        			<label for="Premiere">Premiere</label>
+        		</td>
+        	</tr>
+        	<tr>
+            	<th>Say Something</th>
+            		<td colspan = "2">
+            			<input type = "textarea" rows = "4" cols = "50" placeholder = "Say something here.">
+            		</td>
+        		</tr>
+        	<tr>	
+        	<input type = "submit" value = "submit">
+    		<input type = "reset" value = "reset">
+    		</tr>
+    	</table>
+	</body>
+</form>
+</html>
