@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<style>
+		div {
+			display: none;
+		}
+	</style>
+</head>
+<body>
+	<!--Number guessing game>
+	7 times to get the answer-->
+	<h1>114509109_Number Guessing Game</h1>
+	<script>
+		var chances = 7;
+		var answer = Math.floor(Math.random() * 100 + 1);
+		var wrongDiv = document.getElementById("wrong");
+		var correctDiv = document.getElementById("correct");
+		var answerDiv = document.getElementById("answer");
+		//gemini一直跟我說不初始化guess會出錯會很嚴重
+		var guess = -1;
+		while(chances > 0){
+			var guessInput = window.prompt("Please enter a guessed number between 1 to 100, you have" + chances + " times left.");
+			if(guessInput === null){
+				alert("Please do not leave the guessing input blank!!");
+				chances--;
+				continue;
+				}
+			var guess = parseInt(guessInput);
+			if(isNaN(guess)){
+					alert("This is not a valid number!");
+					chances--;
+					continue;
+				} else if(guess > 100 || guess <0){
+				alert("This is not a valid answer!");
+				chances--;
+				continue;
+			}
+			chances--;
+			if(guess === answer){
+				alert("You get the right answer! Good job!");
+				correctDiv.style.display = "block";
+				break;
+			}
+		}
+		if(chances === 0 && guess!==answer){
+			alert("Unfortunately, the correct answer is " + answer);
+			wrongDiv.style.display = "block";
+			answerDiv.innerHTML = "Unfortunately, the correct answer is " + answer;
+			answerDiv.style.display = "block";
+		}
+	</script>
+
+	<div id = "correct">
+		<img src = "correct.jpg" alt = "Correct!">
+	</div>
+
+	<div id = "wrong">
+		<img src = "wrong.jpg" alt = "Wrong!">
+	</div>
+	<p id = "answer">
+		Unfortunately, the correct answer is 
+	</p>
+	
+</body>
+</html>
