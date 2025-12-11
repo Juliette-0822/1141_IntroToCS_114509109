@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+</head>
+<body>
+	<input type="text" id="inputGuess" name="InputGuess" placeholder="Please input your guess">
+	<button id = "submit" value = "submit" onclick = "play()">
+	<div id = "guessRecord">
+	<script>
+		Function generateAnswer(){
+			let intNums = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+			let chosenNum = [];
+			for (let i = 0; i < 4; i++){
+				let chosenIndex = Math.floor(Math.random()* intNums.length);
+				chosenNum.push(intNums[chosenIndex]);
+				intNums.splice(chosenIndex, 1);
+			}
+			return chosenNum;
+		}
+
+		Function isValid(str){
+			if(str.length !== 4) return false;
+			if (!/^\d{4}$/.test(str)) return false;
+
+			let set = new Set(str);
+			return set.size === 4;
+		}
+
+		let answer = generateAnswer();
+		let attempts = 0;
+
+		Function play(){
+			let guessStr = document.getElementById("inputGuess").value;
+			if(!isValid(guessStr)){
+				alert("Invalid input!");
+				document.getElementById("inputGuess").value = "";
+				return;
+			}	
+			attempts ++
+
+			let guessArr = guessStr.split("").map(Number);
+
+			let result = checkAB(guessArr, answer);
+
+			let recordDIV = document.getElementById("guessRecord");
+			recordDIV.innerHTML += `<p>Attempt ${attempts}: ${guessStr} → ${result}</p>`;
+
+			if(result === "4A0B"){
+				alert("Congradulations! You have got the correct answer!")
+				document.getElementById("inputGuess").value = "";
+			}
+
+		}
+
+		function checkAB(guessArr, ansArr){
+			let A = 0, B = 0;
+			for(let i = 0; i < 4; i++){
+				if (guessArr[i] === ansArr[i]){
+					A++;
+				} else if (ansArr.includes(guessArr[i])){
+					B++;
+				}
+			}
+			return `${A}A${B}B`;
+		}
+	</script>
+</body>
+</html>
