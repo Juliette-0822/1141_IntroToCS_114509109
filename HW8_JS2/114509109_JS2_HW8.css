@@ -1,0 +1,33 @@
+body {
+	background-color: lightgrey;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+#Caculator {
+	background-color: white;
+	text-align: center;
+	width: 300px;
+	height: 350px;
+	border-radius: 35px;
+}
+
+#num1, #num2{
+	width: 200px ;
+}
+p {
+	font-family: serif, sans-serif, cursive;
+	font-weight: bold;
+}
+
+#select {
+	width: 50px ;
+}
+
+button {
+	background-color: sandybrown;
+	color: white;
+	font-family: serif, sans-serif, cursive;
+	width: 150px ;
+}
